@@ -1,0 +1,143 @@
+; vim:ft=dosini
+
+[bar/top]
+monitor = eDP-1
+height = 30
+; width = 50%
+; offset-x = 50%
+
+background = #bb000000
+
+font-0 = xos4 Terminus:size=14;2
+font-1 = Symbola:size=14;2
+
+padding-right = 2
+
+module-margin-right = 1
+module-margin-left = 2
+
+; radius = 5
+
+line-size = 2
+overline-size = 2
+underline-size = 2
+underline-color = #fff
+
+modules-left = i3 xwindow
+modules-center = date
+; modules-right = volume battery
+modules-right = pulseaudio cpu memory battery
+
+tray-position = right
+; [module/volume]
+; type = internal/volume
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; format-volume = <label-volume> <ramp-volume>
+format-volume = <ramp-volume>
+
+label-muted = 🔇
+
+ramp-volume-0 = 🔈 
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+[module/cpu]
+type = internal/cpu
+
+format-prefix = "CPU "
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+
+format-prefix = "RAM "
+
+[module/battery]
+type = internal/battery
+
+; format-prefix = "BAT "
+
+format-charging = <animation-charging> <label-charging>
+
+format-discharging = <ramp-capacity> <label-discharging>
+
+; #yellow ff0
+ramp-capacity-0 = %{F#f00}▁%{F-}
+ramp-capacity-1 = %{F#f33}▂%{F-}
+ramp-capacity-2 = %{F#f73}▃%{F-}
+ramp-capacity-3 = %{F#fb3}▄%{F-}
+ramp-capacity-4 = %{F#ff3}▅%{F-}
+ramp-capacity-5 = %{F#bf3}▆%{F-}
+ramp-capacity-6 = %{F#7f3}▇%{F-}
+ramp-capacity-7 = %{F#3f3}█%{F-}
+
+animation-charging-0 = ▁
+animation-charging-0-foreground = #3f3
+; animation-charging-0-background = #00f
+animation-charging-1 = ▂
+animation-charging-1-foreground = #3f3
+animation-charging-2 = ▃
+animation-charging-2-foreground = #3f3
+animation-charging-3 = ▄
+animation-charging-3-foreground = #3f3
+animation-charging-4 = ▅
+animation-charging-4-foreground = #3f3
+animation-charging-5 = ▆
+animation-charging-5-foreground = #3f3
+animation-charging-6 = ▇
+animation-charging-6-foreground = #3f3
+animation-charging-7 = █
+animation-charging-7-foreground = #3f3
+
+[module/date]
+type = internal/date
+
+date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+
+[module/i3]
+type = internal/i3
+
+; pin-workspaces = false
+
+; height = 50%
+
+format = <label-state> <label-mode>
+
+; label-active = %{F#fff}%index%%{F-}
+; label-focused = %index%
+label-focused = %index%
+label-focused-padding = 2
+label-focused-margin = 1
+; label-focused-margin = 1
+; label-focused-foreground = #fff
+label-focused-background = #dd0077bb
+; label-focused-overline = #fff
+; label-focused-underline = #fff
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+label-unfocused-foreground = #bbb
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #ddbb3300
+; label-monocle = monocle
+; label-monocle-foreground = #fff
+; label-mode-background = #373
+; label-mode-margin = 1
+
+; label-dimmed = %{F#555}%index%%{F-}
+; label-dimmed-foreground = #555
+
+; set no label for empty workspaces
+; label-empty = 
+
+[module/xwindow]
+type = internal/xwindow
+
+label = %title%
+label-maxlen = 50

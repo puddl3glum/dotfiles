@@ -1,0 +1,23 @@
+! set terminal font
+! URxvt*font: xft:xos4 Terminus:size=12,xft:Unifont:size=12
+URxvt*font: xft:xos4 Terminus:regular:size=12, \
+            xft:DejaVu Sans Mono:size=12, \
+            xft:PowerlineSymbols:size=12, \
+            xft:unifont:style=Medium, \
+            xft:Symbola:size=12, \
+            xft:FreeMono:size=12, \
+            xft:DejaVu Sans:size=12, \
+
+URxvt*boldFont: xft:xos4 Terminus:bold:size=12
+
+! these did not seem to work, hence switching to urxvt
+xterm*VT100.Translations: #override \n\
+    Shift Ctrl <key>V:    insert-selection(CLIPBOARD) \n\
+    Shift Ctrl <key>C:    copy-selection(CLIPBOARD)
+
+!! remove fucking ugly scrollbar in urxvt
+URxvt.scrollBar: false
+
+! Add some transparency to that bish
+URxvt.transparent: true
+URxvt.shading: 10
