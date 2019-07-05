@@ -102,11 +102,11 @@ map <C-n> :NERDTreeToggle<CR>
 
 " set ctrl + dir to be ctrl+w dir
 " maximize a window with C-_
-map <C-_> <C-W>_<C-W>
+map <C-_> <C-W>_
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
-map <C-L> <C-W>l<C-W>
-map <C-H> <C-W>h<C-W>
+map <C-L> <C-W>l
+map <C-H> <C-W>h
 
 " Set emmet leader to ctrl e instead of ctrl y
 let g:user_emmet_leader_key='<C-E>'
